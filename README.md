@@ -54,7 +54,7 @@ docker-compose up --build
 
 Step 3: Access the Application
 Once the logs in your terminal slow down and indicate the services are running, you can access the application:
-Frontend User Interface: http://localhost:3000
+Frontend User Interface: http://localhost:3000/login
 Backend API (Swagger UI): http://localhost:8080/swagger
 Stopping the Application
 Go to the terminal where the application is running and press Ctrl + C.
