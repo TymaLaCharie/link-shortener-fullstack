@@ -1,0 +1,213 @@
+2025-07-24 15:06:32.162 +02:00 [INF] Starting ACDS application
+2025-07-24 15:06:33.190 +02:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-24 15:06:33.610 +02:00 [INF] Now listening on: https://localhost:7260
+2025-07-24 15:06:33.614 +02:00 [INF] Now listening on: http://localhost:5019
+2025-07-24 15:06:33.700 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-24 15:06:33.702 +02:00 [INF] Hosting environment: Development
+2025-07-24 15:06:33.703 +02:00 [INF] Content root path: C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api
+2025-07-24 17:47:21.046 +02:00 [INF] Starting ACDS application
+2025-07-24 17:47:21.487 +02:00 [FTL] Application start-up failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 29
+2025-07-24 17:50:24.768 +02:00 [INF] Starting ACDS application
+2025-07-24 17:50:25.373 +02:00 [FTL] Application start-up failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 29
+2025-07-24 17:54:31.320 +02:00 [INF] Starting ACDS application
+2025-07-24 17:54:31.627 +02:00 [FTL] Application start-up failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 29
+2025-07-24 17:56:54.023 +02:00 [INF] Starting ACDS application
+2025-07-24 17:56:54.299 +02:00 [FTL] Application start-up failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 29
+2025-07-24 17:57:37.946 +02:00 [INF] Starting ACDS application
+2025-07-24 17:57:38.438 +02:00 [FTL] Application start-up failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 29
+2025-07-24 17:58:59.127 +02:00 [INF] Starting ACDS application
+2025-07-24 17:58:59.580 +02:00 [FTL] Application start-up failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 29
+2025-07-24 18:00:41.098 +02:00 [INF] Starting ACDS application
+2025-07-24 18:00:41.460 +02:00 [FTL] Application start-up failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 29
+2025-07-24 18:05:49.699 +02:00 [INF] Starting ACDS application
+2025-07-24 18:05:50.160 +02:00 [FTL] Application start-up failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 29
+2025-07-24 18:24:06.704 +02:00 [INF] Starting ACDS application
+2025-07-24 18:24:07.615 +02:00 [FTL] Application start-up failed
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 21
+2025-07-24 18:24:30.221 +02:00 [INF] Starting ACDS application
+2025-07-24 18:24:31.123 +02:00 [FTL] Application start-up failed
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 21
+2025-07-24 18:25:53.011 +02:00 [INF] Starting ACDS application
+2025-07-24 18:25:53.589 +02:00 [FTL] Application start-up failed
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 21
+2025-07-24 18:29:18.779 +02:00 [INF] Starting ACDS application
+2025-07-24 18:29:19.901 +02:00 [FTL] Application start-up failed
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 21
+2025-07-24 18:30:23.729 +02:00 [INF] Starting ACDS application
+2025-07-24 18:30:25.375 +02:00 [FTL] Application start-up failed
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 21
+2025-07-24 22:54:13.505 +02:00 [INF] Starting ACDS application
+2025-07-24 22:54:14.302 +02:00 [FTL] Application start-up failed
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 21
+2025-07-24 22:57:43.017 +02:00 [INF] Starting ACDS application
+2025-07-24 22:59:21.791 +02:00 [FTL] Application start-up failed
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 21
+2025-07-24 23:04:14.317 +02:00 [INF] Starting ACDS application
+2025-07-24 23:04:38.999 +02:00 [FTL] Application start-up failed
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 21
+2025-07-24 23:22:31.495 +02:00 [INF] Starting ACDS application
+2025-07-24 23:23:30.257 +02:00 [FTL] Application start-up failed
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.AddSwaggerGen(IServiceCollection services, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 21
+2025-07-24 23:24:00.865 +02:00 [INF] Starting ACDS application
+2025-07-24 23:24:01.906 +02:00 [FTL] Application start-up failed
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+   at Swashbuckle.AspNetCore.Swagger.SwaggerOptions..ctor()
+   at System.RuntimeType.CreateInstanceOfT()
+   --- End of inner exception stack trace ---
+   at System.RuntimeType.CreateInstanceOfT()
+   at System.Activator.CreateInstance[T]()
+   at Microsoft.Extensions.Options.OptionsFactory`1.CreateInstance(String name)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsManager`1.Get(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.get_Value()
+   at Microsoft.AspNetCore.Builder.SwaggerBuilderExtensions.UseSwagger(IApplicationBuilder app, Action`1 setupAction)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 34
+2025-07-24 23:24:33.072 +02:00 [INF] Starting ACDS application
+2025-07-24 23:24:34.420 +02:00 [FTL] Application start-up failed
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'Microsoft.OpenApi.Any.IOpenApiAny' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiDiscriminator' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiExternalDocs' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiReference' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiSchema' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiTag' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiXml' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiPathItem' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiRequestBody' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiRequestBody' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiPaths' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiOperation' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OperationType' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiParameter' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiRequestBody' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiResponse' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiResponses' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiSchema' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+   at System.Reflection.RuntimeModule.GetDefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.Initialize()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.GetChangeToken()
+   at Microsoft.Extensions.Primitives.ChangeToken.ChangeTokenRegistration`1..ctor(Func`1 changeTokenProducer, Action`1 changeTokenConsumer, TState state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Subscribe()
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.GetOrCreateDataSource(IEndpointRouteBuilder endpoints)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.MapControllers(IEndpointRouteBuilder endpoints)
+   at Program.<Main>$(String[] args) in C:\Users\x483855\OneDrive - Old Mutual\Documents\Private\Personal Projects\LinkShortner\LinkShortner.Api\Program.cs:line 43
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Any.IOpenApiAny' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiDiscriminator' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiExternalDocs' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiReference' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiSchema' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiTag' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiXml' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiPathItem' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiRequestBody' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiRequestBody' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiPaths' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiOperation' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OperationType' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiParameter' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiRequestBody' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiResponse' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiResponses' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiSchema' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+2025-07-24 23:27:11.339 +02:00 [INF] Starting ACDS application

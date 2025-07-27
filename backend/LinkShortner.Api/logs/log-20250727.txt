@@ -1,0 +1,479 @@
+2025-07-27 00:27:53.304 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/auth/login - null null
+2025-07-27 00:27:53.317 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:27:53.318 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.3289 ms
+2025-07-27 00:27:53.320 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/auth/login - 204 null null 16.3831ms
+2025-07-27 00:27:53.322 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7260/api/auth/login - application/json 56
+2025-07-27 00:27:53.336 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:27:53.338 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 00:27:53.339 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LinkShortner.Api.Models.DataTransferObjects.LoginRequestDTO) on controller LinkShortner.Api.Controllers.AuthController (LinkShortner.Api).
+2025-07-27 00:27:53.386 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__loginRequestDTO_Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[DateRegistered], [u].[Email], [u].[FirstName], [u].[PasswordHash], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginRequestDTO_Email_0
+2025-07-27 00:27:53.736 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:27:53.739 +02:00 [INF] Executed action LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api) in 397.484ms
+2025-07-27 00:27:53.741 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 00:27:53.742 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 405.2872 ms
+2025-07-27 00:27:53.745 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7260/api/auth/login - 200 null application/json; charset=utf-8 423.3638ms
+2025-07-27 00:27:55.756 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:27:55.756 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:27:55.765 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:27:55.768 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:27:55.768 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 4.0650 ms
+2025-07-27 00:27:55.768 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 0.9110 ms
+2025-07-27 00:27:55.770 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 14.0514ms
+2025-07-27 00:27:55.770 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 14.7322ms
+2025-07-27 00:27:55.783 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:27:55.822 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:27:55.842 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:27:55.856 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 00:27:56.074 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 00:27:56.083 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:27:56.097 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 231.3046ms
+2025-07-27 00:27:56.098 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:27:56.098 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:27:56.101 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:27:56.101 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 278.8654 ms
+2025-07-27 00:27:56.103 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 319.6586ms
+2025-07-27 00:27:56.103 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:27:56.106 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 00:27:56.116 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 00:27:56.119 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:27:56.124 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 16.4608ms
+2025-07-27 00:27:56.125 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:27:56.126 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 25.6394 ms
+2025-07-27 00:27:56.128 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 29.8025ms
+2025-07-27 00:28:23.138 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/redirect/BtDj0 - null null
+2025-07-27 00:28:23.281 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.RedirectController.Follow (LinkShortner.Api)'
+2025-07-27 00:28:23.285 +02:00 [INF] Route matched with {action = "Follow", controller = "Redirect"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Follow(System.String) on controller LinkShortner.Api.Controllers.RedirectController (LinkShortner.Api).
+2025-07-27 00:28:23.299 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__shortCode_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[LongUrl], [u].[ShortCode], [u].[UserId]
+FROM [Urls] AS [u]
+WHERE [u].[ShortCode] = @__shortCode_0
+2025-07-27 00:28:23.468 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Clicks] ([UrlId])
+OUTPUT INSERTED.[Id], INSERTED.[ClickedAt]
+VALUES (@p0);
+2025-07-27 00:28:23.504 +02:00 [INF] Executing RedirectResult, redirecting to https://api.sanlam.co.za/auth/oauth/v2/authorize/login?action=display&sessionID=ea20c525-2fa4-4bdc-8763-ac5f808a3320&sessionData=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZXNzaW9uIjp7InNlc3Npb25JRCI6ImVhMjBjNTI1LTJmYTQtNGJkYy04NzYzLWFjNWY4MDhhMzMyMCIsImV4cCI6MTc1MzUxNTMzMCwiY3VycmVudF91c2VybmFtZSI6IiIsImN1cnJlbnRfdXNlcl9jb25zZW50Ijoibm9uZSIsImN1cnJlbnRfdXNlcl9yb2xlIjoiIiwiY3VycmVudF91c2VyX2FjciI6IjAiLCJjdXJyZW50X3VzZXJfYXV0aFRpbWUiOiIwIiwic2FsdCI6IiIsInRoaXJkX3BhcnR5X3Nzb190b2tlbiI6IiIsInRoaXJkX3BhcnR5X3Nzb190b2tlbl90eXBlIjoiIn0sInJlcXVlc3RfY29uc2VudCI6eyJjbGllbnRfbmFtZSI6IkNYLVVFWC1hcGkra2V5KzEiLCJzY29wZV92ZXJpZmllZCI6Im9wZW5pZCtwcm9maWxlK2VtYWlsK3Bob25lIn0sInJlcXVlc3RfcGFyYW1ldGVycyI6eyJkaXNwbGF5IjoicGFnZSIsInByb21wdCI6ImxvZ2luK2NvbnNlbnQiLCJpZF90b2tlbl9oaW50IjoiIiwibG9naW5faGludCI6IiIsImFjcl92YWx1ZXMiOiIiLCJjbGllbnRfaWQiOiJsN2M0NTRmODljZjkyNDRkZTZhOGNlNGNhZGI3OTU0NDlmIiwibm9uY2UiOiIiLCJzY29wZSI6Im9wZW5pZCtwcm9maWxlK2VtYWlsK3Bob25lIiwibWF4X2FnZSI6IiJ9LCJjdXN0b21fYXR0cmlidXRlcyI6eyJyZWFsbSI6IiIsImJyYW5kIjoic2FubGFtX3VleCIsImRldmljZSI6eyJkZXZpY2VpbmZvIjoiIiwicGxhdGZvcm0iOiIiLCJ2ZXJzaW9ubnVtYmVyIjoiIiwiYXBwSW5zdGFsbGF0aW9uS2V5IjoiIiwiZmNtdG9rZW4iOiIifSwicXVlcnlQYXJhbURhdGEiOiJ7JnF1b3Q7cmVkaXJlY3RVcmkmcXVvdDs6JnF1b3Q7L3NlcnZpY2luZy9kYXNoYm9hcmQmcXVvdDt9IiwibWZhX3NlcnZlcl9lbmRwb2ludCI6Imh0dHBzOi8vYXBpLnNhbmxhbS5jby56YS9hdXRoL29hdXRoL3YyL2F1dGhvcml6ZS9tZmEiLCJtZmFfZXJyb3IiOiIiLCJtZmFfdGFzayI6ZmFsc2UsImFwcGxpY2F0aW9uX2F0dHJpYnV0ZXMiOnsiUmVsYXhBdXRoZW50aWNhdGlvblJhdGVMaW1pdCI6IiIsInJmY19lcnJvciI6IkVuYWJsZWQiLCJfcG9ydGFsQXBwbGljYXRpb25VdWlkIjoiZmEyNzJkNzItMjYzMC00Y2U1LTkxZmItNWE1NmMzYTNjZGY5IiwiQXBwbGljYXRpb25Pd25lck5hbWUiOiJNYXR0aGV3IEVrcm9uIiwiTUZBIjoiIiwiQXBwbGljYXRpb25Db3N0Q2VudHJlIjoiQTAyNzY3IiwicHJvbXB0X25vbmUiOiJUcnVlIiwicmVhbG0iOiIiLCJBcHBsaWNhdGlvblN1cHBvcnRDb250YWN0TmFtZSI6Ik1hdHRoZXcgRWtyb24iLCJqd3RfbWF5X2FjdCI6IkNYLVVFWC1VSS1HRU5FUkFURUQtTEVUVEVSUy1hcGkga2V5IDEsQ1gtVUVYLVVJLUFHRU5ULURBU0hCT0FSRC1hcGkga2V5IDEsQ1gtVUVYLVVJLUFHRU5ULUlOQ1JFQVNFLUNPTlRSSUJVVElPTi1hcGkga2V5IDEsQ1gtVUVYLVNIQVJFRC1VU0VSLVJPTEUtYXBpIGtleSAxLFNQVy1VRVgtRE9DVU1FTlRTLWFwaSBrZXkgMSxDWC1VRVgtVUktSURFTlRJVFktTUFOQUdFTUVOVC1hcGkga2V5IDEsU1BXLVVFWC1NQVJLRVRTLWFwaSBrZXkgMSxTUFctVUVYLVBFUkZPUk1BTkNFLWFwaSBrZXkgMSxTUFctVUVYLVBPUlRGT0xJTy1hcGkga2V5IDEsU1BXLVVFWC1VSS1DTElFTlRQT1JUQUwtYXBpIGtleSAxLENYLVVFWC1TaGFyZWQtU3VydmV5LWFwaSBrZXkgMSxDWC1VRVgtVUktU0VSVklDSU5HLUxBWU9VVC1hcGkga2V5IDEsQ1gtVUVYLVVJLURPQ1VNRU5ULUNPTExBQk9SQVRJT04tYXBpIGtleSAxLENYLUNJRVAtQktJLWFwaSBrZXkgMSxDWC1VRVgtU2hhcmVkLURvY3VtZW50cy1hcGkga2V5IDEsQ1gtVUVYLVNoYXJlZC1DbGllbnRQb3J0Zm9saW8tYXBpIGtleSAxLENYLVVFWC1TaGFyZWQtSW50ZXJtZWRpYXJ5LWFwaSBrZXkgMSxDWC1VRVgtVUktREFTSEJPQVJELWFwaSBrZXkgMSxDWC1VRVgtVUktU0VSVklDRS1MSUZFLWFwaSBrZXkgMSxDWC1VRVgtVUktU0VSVklDSU5HLURFQklUT1JERVJTLWFwaSBrZXkgMSxDWC1VRVgtVUktU0VSVklDSU5HLUlOQ1JFQVNFUEFZTUVOVFMtYXBpIGtleSAxLENYLUNJRVAtUE9SVEZPTElPLWFwaSBrZXkgMSxDWC1VRVgtVUktU0VSVklDSU5HLUJFTi1OT00tYXBpIGtleSAxLENYLVVFWC1TSEFSRUQtVVNFUi1BVVRILWFwaSBrZXkgMSxDWC1VRVgtVUktU0VSVklDRS1URlNBLWFwaSBrZXkgMSxDWC1VRVgtVUktU0VSVklDRS1QT1NUTE9HSU4tYXBpIGtleSAxLENYLVVFWC1TaGFyZWQtVXNlci1hcGkga2V5IDEsc3ZjUHJkU2d0Q1hSZWcsc3ZjUHJkU2d0QnNvLENYLVVFWC1VSS1SRVNFVFBBU1NXT1JELWFwaSBrZXkgMSxDWC1VRVgtU2hhcmVkLU9UUC1hcGkga2V5IDEsQ1gtVUVYLVVJLVJlZ2lzdHJhdGlvbi1hcGkga2V5IDEsQ1gtVUVYLVVJLVNFUlZJQ0lOR1BFUlNPTkFMLWFwaSBrZXkgMSxDWC1VRVgtVUktUmV0aXJlbWVudEFubnVpdHktYXBpIGtleSAxLENYLVVFWC1TaGFyZWQtQXVkaXQtYXBpIGtleSAxLENYLVVFWC1TaGFyZWQtQ2xpZW50LURldGFpbHMtYXBpIGtleSAxLENYLVVFWC1TaGFyZWQtUHJvZHVjdC1hcGkga2V5IDEsQ1gtVUVYLVVJLVNFUlZJQ0lORy1TRVJWSUNFLVJFUVVFU1QtVFJBQ0tJTkctYXBpIGtleSAxLENYLVVFWC1VSS1TRVJWSUNJTkctRE9DVU1FTlQtVkFVTFQtYXBpIGtleSAxLENYLVVFWC1TaGFyZWQtR29hbERldGFpbHMtYXBpIGtleSAxLENYLVVFWC1VSS1ET0NVTUVOVFMtYXBpIGtleSAxLENYLVVFWC1VSS1VU0VSU1VSVkVZLWFwaSBrZXkgMSxDWC1VRVgtVUktVFdPLVBPVC1XSVRIRFJBV0FMUy1hcGkga2V5IDEsQ1gtVUVYLVVJLUFjY291bnQtU2V0dGluZ3MtYXBpIGtleSAxLENYLVVFWC1TaGFyZWQtQ29tbXVuaWNhdGlvbi1hcGkga2V5IDEsQ1gtVUVYLVNoYXJlZC1Db250YWN0LUhpc3RvcnktYXBpIGtleSAxLENYLVVFWC1VSS1TRVJWSUNJTkctSU5WRVNUTUVOVEZVTkRTLWFwaSBrZXkgMSIsIkFwcGxpY2F0aW9uU3VwcG9ydENvbnRhY3RFbWFpbCI6Ik1hdHRoZXcuRWtyb25Ac2FubGFtLmNvLnphIiwiYnJhbmQiOiJzYW5sYW1fdWV4In19fQ.DZo8QKd0H3bqW0RryVRm9r19v9iB5-vMYPObtZBLCfg.
+2025-07-27 00:28:23.505 +02:00 [INF] Executed action LinkShortner.Api.Controllers.RedirectController.Follow (LinkShortner.Api) in 218.9018ms
+2025-07-27 00:28:23.507 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.RedirectController.Follow (LinkShortner.Api)'
+2025-07-27 00:28:23.507 +02:00 [INF] HTTP GET /redirect/BtDj0 responded 302 in 226.6086 ms
+2025-07-27 00:28:23.510 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/redirect/BtDj0 - 302 0 null 371.5173ms
+2025-07-27 00:28:37.680 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:28:37.688 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:28:37.690 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 1.6640 ms
+2025-07-27 00:28:37.693 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 12.1598ms
+2025-07-27 00:28:37.696 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:28:37.701 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:28:37.704 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:28:37.705 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 00:28:37.714 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 00:28:37.717 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:28:37.719 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 12.6775ms
+2025-07-27 00:28:37.721 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:28:37.723 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 21.7550 ms
+2025-07-27 00:28:37.725 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 29.1244ms
+2025-07-27 00:41:17.215 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:41:17.220 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:41:17.221 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 1.5429 ms
+2025-07-27 00:41:17.225 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 10.1332ms
+2025-07-27 00:41:17.229 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:41:17.247 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:41:17.256 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:41:17.258 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 00:41:17.299 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 00:41:17.303 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:41:17.307 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 46.8236ms
+2025-07-27 00:41:17.309 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:41:17.310 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 63.4798 ms
+2025-07-27 00:41:17.312 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 83.1528ms
+2025-07-27 00:41:43.986 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/Urls/analytics - null null
+2025-07-27 00:41:44.001 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-27 00:41:44.008 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-27 00:41:44.011 +02:00 [INF] HTTP GET /api/Urls/analytics responded 401 in 11.8221 ms
+2025-07-27 00:41:44.012 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/Urls/analytics - 401 0 null 25.8185ms
+2025-07-27 00:42:48.575 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/auth/login - null null
+2025-07-27 00:42:48.587 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:42:48.589 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.2341 ms
+2025-07-27 00:42:48.592 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/auth/login - 204 null null 18.0025ms
+2025-07-27 00:42:48.595 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7260/api/auth/login - application/json 57
+2025-07-27 00:42:48.604 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:42:48.605 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 00:42:48.606 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LinkShortner.Api.Models.DataTransferObjects.LoginRequestDTO) on controller LinkShortner.Api.Controllers.AuthController (LinkShortner.Api).
+2025-07-27 00:42:48.611 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__loginRequestDTO_Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[DateRegistered], [u].[Email], [u].[FirstName], [u].[PasswordHash], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginRequestDTO_Email_0
+2025-07-27 00:42:48.813 +02:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-07-27 00:42:48.819 +02:00 [INF] Executed action LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api) in 211.8682ms
+2025-07-27 00:42:48.822 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 00:42:48.824 +02:00 [INF] HTTP POST /api/auth/login responded 401 in 219.4576 ms
+2025-07-27 00:42:48.825 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7260/api/auth/login - 401 null text/plain; charset=utf-8 230.8024ms
+2025-07-27 00:42:54.472 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/auth/login - null null
+2025-07-27 00:42:54.475 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:42:54.476 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.3284 ms
+2025-07-27 00:42:54.479 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/auth/login - 204 null null 7.6646ms
+2025-07-27 00:42:54.481 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7260/api/auth/login - application/json 56
+2025-07-27 00:42:54.487 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:42:54.491 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 00:42:54.494 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LinkShortner.Api.Models.DataTransferObjects.LoginRequestDTO) on controller LinkShortner.Api.Controllers.AuthController (LinkShortner.Api).
+2025-07-27 00:42:54.499 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__loginRequestDTO_Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[DateRegistered], [u].[Email], [u].[FirstName], [u].[PasswordHash], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginRequestDTO_Email_0
+2025-07-27 00:42:54.685 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:42:54.689 +02:00 [INF] Executed action LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api) in 194.5664ms
+2025-07-27 00:42:54.693 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 00:42:54.695 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 208.0766 ms
+2025-07-27 00:42:54.697 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7260/api/auth/login - 200 null application/json; charset=utf-8 216.3813ms
+2025-07-27 00:42:54.821 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:42:54.828 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:42:54.843 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:42:54.845 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:42:54.846 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 1.3506 ms
+2025-07-27 00:42:54.846 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 3.1994 ms
+2025-07-27 00:42:54.849 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 21.0007ms
+2025-07-27 00:42:54.850 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 28.74ms
+2025-07-27 00:42:54.851 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:42:54.866 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:42:54.868 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:42:54.869 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 00:42:54.884 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 00:42:54.891 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:42:54.893 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 22.305ms
+2025-07-27 00:42:54.895 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:42:54.895 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:42:54.899 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:42:54.899 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 32.4859 ms
+2025-07-27 00:42:54.901 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:42:54.906 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 55.1218ms
+2025-07-27 00:42:54.907 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 00:42:54.915 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 00:42:54.918 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:42:54.920 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 8.5925ms
+2025-07-27 00:42:54.921 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:42:54.922 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 23.3957 ms
+2025-07-27 00:42:54.923 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 27.9818ms
+2025-07-27 00:51:36.272 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:51:36.287 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:51:36.291 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-27 00:51:36.293 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-27 00:51:36.294 +02:00 [INF] HTTP GET /api/urls/analytics responded 401 in 6.7694 ms
+2025-07-27 00:51:36.297 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 401 0 null 25.7546ms
+2025-07-27 00:52:01.573 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/auth/login - null null
+2025-07-27 00:52:01.586 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:52:01.588 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.7432 ms
+2025-07-27 00:52:01.590 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/auth/login - 204 null null 17.0182ms
+2025-07-27 00:52:01.591 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7260/api/auth/login - application/json 56
+2025-07-27 00:52:01.601 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:52:01.602 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 00:52:01.603 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LinkShortner.Api.Models.DataTransferObjects.LoginRequestDTO) on controller LinkShortner.Api.Controllers.AuthController (LinkShortner.Api).
+2025-07-27 00:52:01.620 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__loginRequestDTO_Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[DateRegistered], [u].[Email], [u].[FirstName], [u].[PasswordHash], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginRequestDTO_Email_0
+2025-07-27 00:52:01.810 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:52:01.815 +02:00 [INF] Executed action LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api) in 210.5506ms
+2025-07-27 00:52:01.819 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 00:52:01.821 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 219.9718 ms
+2025-07-27 00:52:01.822 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7260/api/auth/login - 200 null application/json; charset=utf-8 230.876ms
+2025-07-27 00:52:01.955 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:52:01.959 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:52:01.960 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:52:01.965 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:52:01.967 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 7.7212 ms
+2025-07-27 00:52:01.968 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 5.2654 ms
+2025-07-27 00:52:01.970 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 15.8176ms
+2025-07-27 00:52:01.972 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 12.8749ms
+2025-07-27 00:52:01.972 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:52:01.991 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:52:01.992 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:52:01.993 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 00:52:02.009 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 00:52:02.014 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:52:02.018 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 23.1304ms
+2025-07-27 00:52:02.019 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:52:02.020 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:52:02.021 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 29.7718 ms
+2025-07-27 00:52:02.023 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:52:02.024 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 51.6933ms
+2025-07-27 00:52:02.025 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:52:02.027 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 00:52:02.034 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 00:52:02.039 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:52:02.042 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 12.6508ms
+2025-07-27 00:52:02.043 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:52:02.044 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 20.7764 ms
+2025-07-27 00:52:02.048 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 27.352ms
+2025-07-27 00:56:47.334 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:56:47.346 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:56:47.347 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 1.4803 ms
+2025-07-27 00:56:47.349 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 14.6013ms
+2025-07-27 00:56:47.351 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 00:56:47.361 +02:00 [INF] CORS policy execution successful.
+2025-07-27 00:56:47.362 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:56:47.363 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 00:56:47.392 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 00:56:47.402 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 00:56:47.403 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 35.0535ms
+2025-07-27 00:56:47.413 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 00:56:47.414 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 53.1353 ms
+2025-07-27 00:56:47.415 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 64.2492ms
+2025-07-27 01:02:34.378 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:02:34.378 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:02:34.390 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:02:34.393 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:02:34.397 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 6.7195 ms
+2025-07-27 01:02:34.398 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 5.6297 ms
+2025-07-27 01:02:34.400 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 22.417ms
+2025-07-27 01:02:34.401 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 22.6742ms
+2025-07-27 01:02:34.409 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:02:34.422 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:02:34.423 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:02:34.424 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 01:02:34.445 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 01:02:34.449 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 01:02:34.451 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 26.0788ms
+2025-07-27 01:02:34.452 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:02:34.453 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:02:34.453 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 31.8124 ms
+2025-07-27 01:02:34.456 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:02:34.457 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 48.5284ms
+2025-07-27 01:02:34.458 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:02:34.464 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 01:02:34.469 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 01:02:34.472 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 01:02:34.474 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 8.7877ms
+2025-07-27 01:02:34.475 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:02:34.476 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 20.4458 ms
+2025-07-27 01:02:34.480 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 27.2265ms
+2025-07-27 01:03:02.695 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/auth/login - null null
+2025-07-27 01:03:02.702 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:02.703 +02:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.2340 ms
+2025-07-27 01:03:02.705 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/auth/login - 204 null null 9.6386ms
+2025-07-27 01:03:02.707 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7260/api/auth/login - application/json 56
+2025-07-27 01:03:02.711 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:02.712 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 01:03:02.713 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LinkShortner.Api.Models.DataTransferObjects.LoginRequestDTO) on controller LinkShortner.Api.Controllers.AuthController (LinkShortner.Api).
+2025-07-27 01:03:02.718 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__loginRequestDTO_Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[DateRegistered], [u].[Email], [u].[FirstName], [u].[PasswordHash], [u].[Surname]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__loginRequestDTO_Email_0
+2025-07-27 01:03:02.919 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 01:03:02.923 +02:00 [INF] Executed action LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api) in 208.9334ms
+2025-07-27 01:03:02.925 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.AuthController.Login (LinkShortner.Api)'
+2025-07-27 01:03:02.927 +02:00 [INF] HTTP POST /api/auth/login responded 200 in 215.9156 ms
+2025-07-27 01:03:02.930 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7260/api/auth/login - 200 null application/json; charset=utf-8 223.5134ms
+2025-07-27 01:03:03.019 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:03:03.029 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:03:03.031 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:03.034 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:03.035 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 4.1169 ms
+2025-07-27 01:03:03.036 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 2.0584 ms
+2025-07-27 01:03:03.039 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 19.7612ms
+2025-07-27 01:03:03.040 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 10.905ms
+2025-07-27 01:03:03.049 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:03:03.057 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:03.059 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:03:03.062 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 01:03:03.068 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 01:03:03.070 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 01:03:03.072 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 8.51ms
+2025-07-27 01:03:03.074 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:03:03.074 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:03:03.075 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 18.0315 ms
+2025-07-27 01:03:03.078 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:03.081 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 32.5932ms
+2025-07-27 01:03:03.082 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:03:03.087 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 01:03:03.104 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 01:03:03.107 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 01:03:03.118 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 29.514ms
+2025-07-27 01:03:03.119 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:03:03.120 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 41.5958 ms
+2025-07-27 01:03:03.121 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 47.3663ms
+2025-07-27 01:03:18.063 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:03:18.087 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:03:18.088 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:18.090 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:18.090 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 1.6056 ms
+2025-07-27 01:03:18.099 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 35.9665ms
+2025-07-27 01:03:18.091 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 1.5096 ms
+2025-07-27 01:03:18.102 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:03:18.104 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 17.0504ms
+2025-07-27 01:03:18.118 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:18.120 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:03:18.121 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 01:03:18.134 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 01:03:18.137 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 01:03:18.139 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 17.1925ms
+2025-07-27 01:03:18.140 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:03:18.140 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:03:18.141 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 22.8726 ms
+2025-07-27 01:03:18.148 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:03:18.149 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 46.7952ms
+2025-07-27 01:03:18.149 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:03:18.152 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 01:03:18.156 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 01:03:18.158 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 01:03:18.163 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 9.2479ms
+2025-07-27 01:03:18.164 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:03:18.165 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 16.5017 ms
+2025-07-27 01:03:18.166 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 25.637ms
+2025-07-27 01:05:12.804 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls - null null
+2025-07-27 01:05:12.815 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:05:12.816 +02:00 [INF] HTTP OPTIONS /api/urls responded 204 in 1.4533 ms
+2025-07-27 01:05:12.819 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls - 204 null null 15.4638ms
+2025-07-27 01:05:12.821 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7260/api/urls - application/json 100
+2025-07-27 01:05:12.834 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:05:12.836 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.PostUrl (LinkShortner.Api)'
+2025-07-27 01:05:12.842 +02:00 [INF] Route matched with {action = "PostUrl", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[LinkShortner.Api.Models.Entities.Url]] PostUrl(UrlCreateRequest) on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 01:05:12.941 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__shortCode_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Urls] AS [u]
+        WHERE [u].[ShortCode] = @__shortCode_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-07-27 01:05:12.960 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 50), @p2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Urls] ([LongUrl], [ShortCode], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2);
+2025-07-27 01:05:12.970 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-27 01:05:12.974 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.PostUrl (LinkShortner.Api) in 127.8098ms
+2025-07-27 01:05:12.976 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.PostUrl (LinkShortner.Api)'
+2025-07-27 01:05:12.978 +02:00 [INF] HTTP POST /api/urls responded 200 in 143.1850 ms
+2025-07-27 01:05:12.981 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7260/api/urls - 200 null application/json; charset=utf-8 159.7232ms
+2025-07-27 01:05:12.985 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:05:12.987 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:05:12.988 +02:00 [INF] HTTP OPTIONS /api/urls/analytics responded 204 in 1.2390 ms
+2025-07-27 01:05:12.991 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7260/api/urls/analytics - 204 null null 6.4289ms
+2025-07-27 01:05:12.993 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7260/api/urls/analytics - null null
+2025-07-27 01:05:12.997 +02:00 [INF] CORS policy execution successful.
+2025-07-27 01:05:12.998 +02:00 [INF] Executing endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:05:12.999 +02:00 [INF] Route matched with {action = "GetUserAnalytics", controller = "Urls"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.Object]]] GetUserAnalytics() on controller LinkShortner.Api.Controllers.UrlsController (LinkShortner.Api).
+2025-07-27 01:05:13.007 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[LongUrl], [u].[ShortCode], [u].[CreatedAt], (
+    SELECT COUNT(*)
+    FROM [Clicks] AS [c]
+    WHERE [u].[Id] = [c].[UrlId])
+FROM [Urls] AS [u]
+WHERE [u].[UserId] = @__userId_0
+ORDER BY [u].[CreatedAt] DESC
+2025-07-27 01:05:13.011 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LinkShortner.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-27 01:05:13.013 +02:00 [INF] Executed action LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api) in 12.047ms
+2025-07-27 01:05:13.014 +02:00 [INF] Executed endpoint 'LinkShortner.Api.Controllers.UrlsController.GetUserAnalytics (LinkShortner.Api)'
+2025-07-27 01:05:13.014 +02:00 [INF] HTTP GET /api/urls/analytics responded 200 in 17.5608 ms
+2025-07-27 01:05:13.016 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7260/api/urls/analytics - 200 null application/json; charset=utf-8 22.941ms
